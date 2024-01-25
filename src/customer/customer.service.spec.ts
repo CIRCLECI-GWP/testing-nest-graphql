@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CustomerModel } from './customer.model';
+import { CustomerModel } from './customer.entity';
 import { CustomerService } from './customer.service';
 type MockType<T> = {
   [P in keyof T]?: jest.Mock<{}>;
@@ -85,7 +85,7 @@ describe('CustomerService', () => {
       customerRepositoryMock.findOne.mockReturnValue(customer);
       const foundCustomer = await service.findOne(customer.id);
       expect(foundCustomer).toMatchObject(customer);
-      expect(customerRepositoryMock.findOne).toHaveBeenCalledWith(customer.id);
+      expect(customerRepositoryMock.findOne).toHaveBeenCalledWith({ where: { id: customer.id } });
     });
   });
 });

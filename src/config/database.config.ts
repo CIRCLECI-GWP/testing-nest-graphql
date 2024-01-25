@@ -6,11 +6,11 @@ const database = {
       type: "postgres",
       host: "localhost",
       port: 5432,
-      username: "godwinekuma",
+      username: "postgres",
       password: "",
       database: "invoiceapp",
       entities: [
-        "dist/**/*.model.js"
+        "dist/**/*.entity.js"
       ],
       synchronize: false,
       uuidExtension: 'pgcrypto'
@@ -23,7 +23,7 @@ const database = {
       password: "",
       database: process.env.POSTGRES_DB,
       entities: [
-        "src/**/*.model.ts"
+        "src/**/*.entity.ts"
       ],
       synchronize: true,
       dropSchema: true,
@@ -42,5 +42,5 @@ const database = {
   const DatabaseConfig = () => ({
     ...database[process.env.NODE_ENV]
   })
-
+// 
   export = DatabaseConfig;

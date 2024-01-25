@@ -1,9 +1,9 @@
-import { CustomerModel } from './../customer/customer.model';
+import { CustomerModel } from '../customer/customer.entity';
 import { CustomerService } from './../customer/customer.service';
 import { InvoiceService } from './invoice.service';
 import { Resolver, Query, Args, ResolveField, Parent, Mutation } from '@nestjs/graphql';
 import { Inject } from '@nestjs/common';
-import { InvoiceModel } from './invoice.model';
+import { InvoiceModel } from './invoice.entity';
 import { CreateInvoiceDTO } from './invoice.dto';
 
 @Resolver(of => InvoiceModel)

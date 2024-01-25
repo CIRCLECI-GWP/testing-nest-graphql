@@ -1,5 +1,5 @@
 import { CustomerService } from './../customer/customer.service';
-import { InvoiceModel } from './invoice.model';
+import { InvoiceModel } from './invoice.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -45,6 +45,6 @@ export class InvoiceService {
   }
 
   findOne(id: string): Promise<InvoiceModel> {
-    return this.invoiceRepository.findOne(id);
+    return this.invoiceRepository.findOne({ where: { id: id } });
   }
 }

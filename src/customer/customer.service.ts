@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CustomerModel } from './customer.model';
+import { CustomerModel } from './customer.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CustomerDTO } from './customer.dto';
@@ -20,6 +20,6 @@ export class CustomerService {
       }
     
       findOne(id: string): Promise<CustomerModel> {
-        return this.customerRepository.findOne(id);
+        return this.customerRepository.findOne({ where: { id: id } });
       }
 }

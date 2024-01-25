@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import request = require('supertest');
+import request from 'supertest';
 import { AppModule } from '../src/app.module';
 import connection from './connection';
 import { getConnection } from 'typeorm';
-import { CustomerModel } from '../src/customer/customer.model';
+import { CustomerModel } from '../src/customer/customer.entity';
 
 describe('CustomerResolver (e2e)', () => {
   let app: INestApplication;
