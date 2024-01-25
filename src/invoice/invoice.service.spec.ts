@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { CustomerService } from './../customer/customer.service'
-import { InvoiceModel } from './invoice.model';
+import { InvoiceModel } from './invoice.entity';
 import { InvoiceService } from './invoice.service';
 
 describe('InvoiceService', () => {

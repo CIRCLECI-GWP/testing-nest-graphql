@@ -3,6 +3,7 @@ import { InvoiceService } from '../invoice/invoice.service';
 import { CustomerDTO } from './customer.dto';
 import { CustomerResolver } from './customer.resolver';
 import { CustomerService } from './customer.service';
+
 const invoice = {
   id: '1234',
   invoiceNo: 'INV-01',
@@ -22,6 +23,7 @@ const invoice = {
   createdAt: '2017-06-06 11:11:07',
   updatedAt: '2017-06-06 11:11:07',
 };
+
 describe('CustomerResolver', () => {
   let resolver: CustomerResolver;
   beforeEach(async () => {

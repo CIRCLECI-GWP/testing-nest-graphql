@@ -46,15 +46,15 @@ type CustomerModel {
 }
 
 type Query {
-  customer(id: String!): CustomerModel!
-  customers: [CustomerModel!]!
   invoice(id: String!): InvoiceModel!
   invoices: [InvoiceModel!]!
+  customer(id: String!): CustomerModel!
+  customers: [CustomerModel!]!
 }
 
 type Mutation {
-  createCustomer(address: String, phone: String, email: String!, name: String!): CustomerModel!
   createInvoice(invoice: CreateInvoiceDTO!): InvoiceModel!
+  createCustomer(name: String!, email: String!, phone: String, address: String): CustomerModel!
 }
 
 input CreateInvoiceDTO {

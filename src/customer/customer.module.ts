@@ -1,5 +1,5 @@
 import { InvoiceModule } from './../invoice/invoice.module';
-import { CustomerModel } from './customer.model';
+import { CustomerModel } from './customer.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module, forwardRef } from '@nestjs/common';
 import { CustomerService } from './customer.service';
